@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UpToEleven1102/web-presentation-node.git"
+    "url": "git+https://github.com/Zipexpo/presenation-backend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/UpToEleven1102/web-presentation-node/issues"
+    "url": "https://github.com/Zipexpo/presenation-backend/issues"
   },
-  "homepage": "https://github.com/UpToEleven1102/web-presentation-node#readme",
+  "homepage": "https://github.com/Zipexpo/presenation-backend#readme",
   "dependencies": {
     "assert": "^2.0.0",
     "body-parser": "^1.19.0",
