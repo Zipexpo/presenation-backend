@@ -14,7 +14,8 @@ const scoreRoutes = require('./routes/scores')
 const app = express();
 
 // ─────────── Methods ────────────
-app.use(cors())
+app.use(cors());
+app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
