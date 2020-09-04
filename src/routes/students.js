@@ -23,6 +23,7 @@ router.put('/students/:id', function(req, res) {
 });
 
 router.get('/students/presenting', function(req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
     res.status(200).send(presenting_student)
 })
 
