@@ -7,26 +7,22 @@ let presenting_student = null
 let startTime = null
 
 router.post('/students', function(req, res) {
-    res.set('Access-Control-Allow-Origin', '*');
     studentDB.createStudents([req.body]).then(r => {
         res.send(r, 201)
     }).catch(err => res.json({err: err}, 500))
 });
 
 router.get('/students', async function (req, res) {
-    res.set('Access-Control-Allow-Origin', '*');
     const data = await studentDB.getStudents()
     res.status(200).send(data)
 });
 
 router.put('/students/:id', function(req, res) {
-    res.set('Access-Control-Allow-Origin', '*');
     studentDB.putStudent((req.params.id), req.body).then(r => res.status(200).send(''))
         .catch(err => res.status(500).send(err))
 });
 
 router.get('/students/presenting', function(req, res) {
-    res.set('Access-Control-Allow-Origin', '*');
     res.status(200).send(presenting_student)
 })
 
