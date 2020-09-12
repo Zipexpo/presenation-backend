@@ -58,7 +58,7 @@ async function getPresenterAvgScore(id) {
     console.log('avg ', avg)
 
     // Get comments
-    comments = data.filter(d => d.comment.trim().length > 0).map(d => d.comment)
+    comments = data.filter(d => d.comment.trim().length > 0).map(d => ({user_id:d.user_id,comment:d.comment}));
 
     return {
         avg: avg ? avg : "",
