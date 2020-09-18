@@ -38,36 +38,23 @@ async function getPresenterAvgScore(id) {
     // Calculate average
     for (let key of keys) {
         avg.presenter_id = data[0].presenter_id
-        // avg[key] = 0
-        avg[key] = []
+        avg[key] = 0
     }
 
-    // data.forEach(e => {
-    //     for (let key of keys) {
-    //         avg[key] += e[key]
-    //     }
-    // })
-    //
-    // if (avg) {
-    //     for (let key of keys) {
-    //         avg[key] = parseFloat((avg[key]/(data.length)).toFixed(2))
-    //     }
-    //     delete avg.scorer_name
-    //     delete avg.user_id
-    // }
     data.forEach(e => {
         for (let key of keys) {
-            avg[key].push(e[key])
+            avg[key] += e[key]
         }
     })
 
     if (avg) {
-        // for (let key of keys) {
-        //     avg[key] = parseFloat((avg[key]/(data.length)).toFixed(2))
-        // }
+        for (let key of keys) {
+            avg[key] = parseFloat((avg[key]/(data.length)).toFixed(2))
+        }
         delete avg.scorer_name
         delete avg.user_id
     }
+
     console.log('avg ', avg)
 
     // Get comments
