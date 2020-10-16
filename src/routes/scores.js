@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const db = require('../db/scores')
+const studentDB = require('../db/students')
 
 router.post('', async (req, res) => {
     const r = await db.createScore([req.body])
@@ -11,7 +12,8 @@ router.get('', (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
-    const data = await db.getPresenterAvgScore(req.params.id)
+    const students = await studentDB.getStudents()
+    const data = await db.getPresenterAvgScore(req.params.id,students);
     res.status(200).send(data)
 })
 
