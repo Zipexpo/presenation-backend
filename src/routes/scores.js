@@ -12,7 +12,7 @@ router.get('', (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
-    const students = await studentDB.getStudents()
+    const students = await studentDB.getStudentList()
     const data = await db.getPresenterAvgScore(req.params.id,students);
     res.status(200).send(data)
 })
